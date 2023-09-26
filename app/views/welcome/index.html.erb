@@ -1,82 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federica Ulzurrun - Full-Stack Developer</title>
-    <!-- Add your CSS stylesheets or external CSS links here -->
-</head>
-<body>
-    <header>
-        <h1>Federica Ulzurrun</h1>
-        <nav>
-            <a href="#projects">Portfolio</a>
-            <a href="#about-me">About Me</a>
-            <a href="#contact-me">Contact Me</a>
-        </nav>
-        <h2>Software Developer</h2>
+
+<header>
+    <h1>Federica Ulzurrun</h1>
+    <nav>
+        <a href="#projects">Portfolio</a>
+        <a href="#about-me">About Me</a>
+        <a href="#contact-me">Contact Me</a>
+    </nav>
+</header>
+
+<main>
+    <div>
+        <h3>Welcome to my coding world</h3>
         <p>
             I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing.
         </p>
-    </header>
-
-    <main>
-
-    <section>
-        <h2>Latest Projects</h2>
-        <ul>
+    </div>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div>
             <% if @projects.present? %>
-            <% @projects.each do |project| %>
-                <li>
-                <strong><%= project.title %></strong>
-                <p><%= project.overview %></p>
-                </li>
-            <% end %>
+                <% @projects.each do |project| %>
+                <%= link_to project_path(project) do %>
+                    <div class="project-card">
+                    <strong><%= project.title %></strong>
+                    <p><%= project.overview %></p>
+                    <% if project.github_url.present? %>
+                        <%= link_to "GitHub", project.github_url, target: "_blank", class: "btn btn-primary" %>
+                    <% end %>
+                    <% if project.demo_url.present? %>
+                        <%= link_to "Demo", project.demo_url, target: "_blank", class: "btn btn-secondary" %>
+                    <% end %>
+                    </div>
+                <% end %>
+                <% end %>
             <% else %>
-            <li>No projects found.</li>
+                <p>No projects found.</p>
             <% end %>
-        </ul>
+        </div>
     </section>
 
+    <section id="about-me">
+        <h2>About Me</h2>
+        <p>
+            I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing. My journey in the world of software development has been shaped by a year-long intensive program at Microverse, where I've cultivated expertise in a wide spectrum of technologies including JavaScript, React, Redux, Ruby and Ruby on Rails.
+        </p>
+    </section>
 
-        <section>
-            <h2>About Me</h2>
-            <p>
-                I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing. My journey in the world of software development has been shaped by a year-long intensive program at Microverse, where I've cultivated expertise in a wide spectrum of technologies including JavaScript, React, Redux, Ruby and Ruby on Rails.
-            </p>
-        </section>
+    <section>
+        <h2>Skills</h2>
+        <% categories = @skills.pluck(:category).uniq %>
+        <% categories.each do |category| %>
+            <h4><%= category %></h4>
+            <div>
+                <% @skills.where(category: category).each do |skill| %>
+                <p><%= skill.name %><p>
+                <% end %>
+            </div>
+        <% end %>
+    </section>
 
-        <section>
-            <h2>Skills</h2>
-            <ul>
-            <% @skills.each do |skill| %>
-                <li><%= skill.name %> (Category: <%= skill.category %>)</li>
-            <% end %>
-            </ul>
-        </section>
+    <section id="contact-me">
+        <h2>Contact Information</h2>
+        <h5>
+            Feel free to contact me!
+        </h5>
+        <form action="/contact" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+                
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+                
+            <button type="submit">Send</button>
+        </form>
+        <ul>
+            <li>
+                <a href="mailto:fzulzurrun@gmail.com">
+                    <img src="">Mail
+                </a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/federica-ulzurrun">LinkedIn</a></li>
+            <li><a href="https://github.com/federicaulzurrun">Github</a></li>
+        </ul>
+    </section>
+</main>
 
-        <section>
-            <h2>Contact Information</h2>
-            <p>
-                Feel free to get in touch:
-            </p>
-            <ul>
-                <li>
-                    <a href="mailto:fzulzurrun@gmail.com">
-                        <img src="">Mail
-                    </a>
-                </li>
-                <li><a href="https://www.linkedin.com/in/federica-ulzurrun">LinkedIn</a></li>
-                <li><a href="https://github.com/federicaulzurrun">Github</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <!-- Add footer content or links to social media profiles here -->
-        <p>&copy; 2023 Federica Ulzurrun</p>
-    </footer>
-
-    <!-- Add your JavaScript scripts or external script links here -->
-</body>
-</html>
+<footer>
+    <p>&copy; 2023 Federica Ulzurrun</p>
+</footer>
