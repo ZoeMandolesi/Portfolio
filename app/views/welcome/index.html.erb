@@ -1,1 +1,82 @@
-<h1>Welcome</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federica Ulzurrun - Full-Stack Developer</title>
+    <!-- Add your CSS stylesheets or external CSS links here -->
+</head>
+<body>
+    <header>
+        <h1>Federica Ulzurrun</h1>
+        <nav>
+            <a href="#projects">Portfolio</a>
+            <a href="#about-me">About Me</a>
+            <a href="#contact-me">Contact Me</a>
+        </nav>
+        <h2>Software Developer</h2>
+        <p>
+            I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing.
+        </p>
+    </header>
+
+    <main>
+
+    <section>
+        <h2>Latest Projects</h2>
+        <ul>
+            <% if @projects.present? %>
+            <% @projects.each do |project| %>
+                <li>
+                <strong><%= project.title %></strong>
+                <p><%= project.overview %></p>
+                </li>
+            <% end %>
+            <% else %>
+            <li>No projects found.</li>
+            <% end %>
+        </ul>
+    </section>
+
+
+        <section>
+            <h2>About Me</h2>
+            <p>
+                I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing. My journey in the world of software development has been shaped by a year-long intensive program at Microverse, where I've cultivated expertise in a wide spectrum of technologies including JavaScript, React, Redux, Ruby and Ruby on Rails.
+            </p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <ul>
+            <% @skills.each do |skill| %>
+                <li><%= skill.name %> (Category: <%= skill.category %>)</li>
+            <% end %>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Information</h2>
+            <p>
+                Feel free to get in touch:
+            </p>
+            <ul>
+                <li>
+                    <a href="mailto:fzulzurrun@gmail.com">
+                        <img src="">Mail
+                    </a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/federica-ulzurrun">LinkedIn</a></li>
+                <li><a href="https://github.com/federicaulzurrun">Github</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add footer content or links to social media profiles here -->
+        <p>&copy; 2023 Federica Ulzurrun</p>
+    </footer>
+
+    <!-- Add your JavaScript scripts or external script links here -->
+</body>
+</html>
