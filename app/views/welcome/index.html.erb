@@ -17,7 +17,7 @@
 </div>
 <main class="welcomeMain">
     <div class="presentation">
-        <h2 class='titleName'>Federica Ulzurrun </h2>
+        <h2 class="titleName">Federica Ulzurrun </h2>
         <h3>Welcome to my coding world</h3>
         <p>
             Over the past two years, I have had the opportunity to work on several incredible projects that have allowed me to grow and find my place in this competitive industry. I hope you enjoy viewing my projects as much as I enjoyed working on them.
@@ -30,15 +30,22 @@
                 <% @projects.each do |project| %>
                 <%= link_to project_path(project) do %>
                     <div class="project-card">
-                        <h4 class="project-title"><%= project.title %></h4>
-                        <p class="project-overview"><%= project.overview %></p>
-                        <div class="project-btn">
-                            <% if project.github_url.present? %>
-                                <%= link_to "Repository", project.github_url, target: "_blank", class: "btn btn-primary" %>
-                            <% end %>
-                            <% if project.demo_url.present? %>
-                                <%= link_to "Live demo", project.demo_url, target: "_blank", class: "btn btn-secondary" %>
-                            <% end %>
+                        <% if project.url_photo.present? %>
+                            <div class="project-imageCont">
+                                <%= image_tag project.url_photo, alt: project.title, class: "project-image" %>
+                            </div>
+                        <% end %>
+                        <div class="project-info">
+                            <h4 class="project-title"><%= project.title %></h4>
+                            <p class="project-overview"><%= project.overview %></p>
+                            <div class="project-btn">
+                                <% if project.github_url.present? %>
+                                    <%= link_to "Repository", project.github_url, target: "_blank", class: "btn btn-primary" %>
+                                <% end %>
+                                <% if project.demo_url.present? %>
+                                    <%= link_to "Live demo", project.demo_url, target: "_blank", class: "btn btn-secondary" %>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
                 <% end %>
