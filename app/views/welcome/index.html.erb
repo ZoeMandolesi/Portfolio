@@ -2,34 +2,44 @@
 <header>
     <h1>Federica Ulzurrun</h1>
     <nav>
-        <a href="#projects">Portfolio</a>
-        <a href="#about-me">About Me</a>
-        <a href="#contact-me">Contact Me</a>
+        <a class="navLink desk" href="#projects">Portfolio</a>
+        <a class="navLink desk" href="#about-me">About Me</a>
+        <a class="navLink desk" href="#contact-me">Contact Me</a>
     </nav>
+    <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
 </header>
-
-<main>
-    <div>
+<div id="mobileMenu">
+    <ul>
+        <li><a class="navLink" href="#projects">Portfolio</a></li>
+        <li><a class="navLink" href="#about-me">About Me</a></li>
+        <li><a class="navLink" href="#contact-me">Contact Me</a></li>
+    </ul>
+</div>
+<main class="welcomeMain">
+    <div class="presentation">
+        <h2 class='titleName'>Federica Ulzurrun </h2>
         <h3>Welcome to my coding world</h3>
         <p>
-            I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing.
+            Over the past two years, I have had the opportunity to work on several incredible projects that have allowed me to grow and find my place in this competitive industry. I hope you enjoy viewing my projects as much as I enjoyed working on them.
         </p>
     </div>
-    <section id="projects">
+    <div id="projects">
         <h2>Projects</h2>
         <div>
             <% if @projects.present? %>
                 <% @projects.each do |project| %>
                 <%= link_to project_path(project) do %>
                     <div class="project-card">
-                    <strong><%= project.title %></strong>
-                    <p><%= project.overview %></p>
-                    <% if project.github_url.present? %>
-                        <%= link_to "GitHub", project.github_url, target: "_blank", class: "btn btn-primary" %>
-                    <% end %>
-                    <% if project.demo_url.present? %>
-                        <%= link_to "Demo", project.demo_url, target: "_blank", class: "btn btn-secondary" %>
-                    <% end %>
+                        <h4 class="project-title"><%= project.title %></h4>
+                        <p class="project-overview"><%= project.overview %></p>
+                        <div class="project-btn">
+                            <% if project.github_url.present? %>
+                                <%= link_to "Repository", project.github_url, target: "_blank", class: "btn btn-primary" %>
+                            <% end %>
+                            <% if project.demo_url.present? %>
+                                <%= link_to "Live demo", project.demo_url, target: "_blank", class: "btn btn-secondary" %>
+                            <% end %>
+                        </div>
                     </div>
                 <% end %>
                 <% end %>
@@ -37,54 +47,56 @@
                 <p>No projects found.</p>
             <% end %>
         </div>
-    </section>
+    </div>
 
-    <section id="about-me">
-        <h2>About Me</h2>
-        <p>
-            I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing. My journey in the world of software development has been shaped by a year-long intensive program at Microverse, where I've cultivated expertise in a wide spectrum of technologies including JavaScript, React, Redux, Ruby and Ruby on Rails.
-        </p>
-    </section>
+    <div id="about-me">
+        <div class="border-about">
+            <h2>About Me</h2>
+            <p class="description-about">
+                I am Federica, a highly dedicated Software Developer with a well-rounded background in customer service and digital marketing. My journey in the world of software development has been shaped by a year-long intensive program at Microverse, where I've cultivated expertise in a wide spectrum of technologies including JavaScript, React, Redux, Ruby and Ruby on Rails.
+            </p>
+        </div>
+    </div>
 
-    <section>
+    <div class="skills-container">
         <h2>Skills</h2>
-        <% categories = @skills.pluck(:category).uniq %>
-        <% categories.each do |category| %>
-            <h4><%= category %></h4>
-            <div>
+        <div class="skills-wrapper">
+            <% categories = @skills.pluck(:category).uniq %>
+            <% categories.each do |category| %>
+            <div class="skill-category">
+                <h4><%= category %></h4>
                 <% @skills.where(category: category).each do |skill| %>
-                <p><%= skill.name %><p>
+                <p><%= skill.name %></p>
                 <% end %>
             </div>
-        <% end %>
-    </section>
+            <% end %>
+        </div>
+    </div>
 
-    <section id="contact-me">
+
+
+    <div id="contact-me">
         <h2>Contact Information</h2>
         <h5>
             Feel free to contact me!
         </h5>
-        <form action="/contact" method="post">
+        <form action="/contact" method="post" class="contact-form">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
                 
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
                 
-            <button type="submit">Send</button>
+            <button class="btn btnForm" type="submit">Send</button>
         </form>
-        <ul>
-            <li>
-                <a href="mailto:fzulzurrun@gmail.com">
-                    <img src="">Mail
-                </a>
-            </li>
-            <li><a href="https://www.linkedin.com/in/federica-ulzurrun">LinkedIn</a></li>
-            <li><a href="https://github.com/federicaulzurrun">Github</a></li>
-        </ul>
-    </section>
+    </div>
 </main>
 
 <footer>
-    <p>&copy; 2023 Federica Ulzurrun</p>
+    <div class="socials">
+        <a href="mailto:fzulzurrun@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/federica-ulzurrun"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/federicaulzurrun"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <p class="copyR">&copy; 2023 Federica Ulzurrun</p>
 </footer>
