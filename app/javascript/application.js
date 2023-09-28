@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   form.addEventListener('submit', (event) => {
-    event.preventDefault();
     setTimeout(clearForm, 350);
   });
 });
