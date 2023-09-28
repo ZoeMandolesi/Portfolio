@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: portfolio_production
-  username: postgres
-  password: <%= ENV["PORTFOLIO_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
