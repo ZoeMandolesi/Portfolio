@@ -23,28 +23,8 @@ Project.create(
 )
 
 Project.create(
-  title: "Blogify",
-  overview: "Blogify is a versatile blogging platform that empowers users to create and share engaging content with ease.",
-  start_date: Date.new(2023, 8, 3),
-  end_date: Date.new(2023, 8, 5),
-  github_url: "https://github.com/federicaulzurrun/Blogify",
-  technologies: "Ruby on Rails",
-  details: "Blogify is the perfect solution for bloggers and content creators looking to establish a digital presence. With its intuitive interface, users can effortlessly create, edit, and publish blog posts. Features include rich text editing, image uploads, and customizable themes. Built on the Ruby on Rails framework, Blogify ensures security, scalability, and a seamless blogging experience for both novice and experienced writers."
-)
-
-Project.create(
-  title: "Catalogue of My Things",
-  overview: "Catalogue of My Things is a Ruby object-oriented programming console app designed to help you record various types of possessions, including books, music albums, movies, and games.",
-  start_date: Date.new(2023, 9, 10),
-  end_date: Date.new(2023, 7, 14),
-  github_url: "https://github.com/federicaulzurrun/Catalogue-of-my-things",
-  technologies: "Ruby",
-  details: "Catalogue of My Things is a versatile console application that simplifies the process of cataloging your personal belongings. Whether you own a diverse collection of books, music albums, movies, or games, this app provides an organized and user-friendly platform to record and manage your possessions. Built with Ruby and following an object-oriented programming paradigm, it ensures efficient data handling and a seamless user experience."
-)
-
-Project.create(
-  title: "SPACE TRAVELER'S HUB",
-  overview: "This project is a web application built using React and Redux, consuming the SpaceX data API. This page allows the user to see the available rockets and missions. Also, the user can join one or all of them. In the My Profile section, the user can see the reservations they have made.",
+  title: "Space Traveler's Hub",
+  overview: "This project is a web application built using React and Redux, consuming the SpaceX data API. This page allows the user to see the available rockets and missions.",
   start_date: Date.new(2023, 5, 19),
   end_date: Date.new(2023, 5, 24),
   github_url: "https://github.com/federicaulzurrun/react-group-project",
@@ -52,6 +32,28 @@ Project.create(
   technologies: "React, Redux",
   details: "The project features a visually stunning user interface with real-time updates of SpaceX missions. Users can explore details about rockets, missions, and even track upcoming launches. The backend is powered by a robust Ruby on Rails API, ensuring fast and reliable data retrieval. Additionally, the application employs user authentication for secure reservations, and users can share their reservations on social media.",
   url_photo: "https://i.postimg.cc/cC1TLh6X/Any-Conv-com-Captura-de-Pantalla-2023-09-27-a-la-s-10-58-43.webp"
+)
+
+Project.create(
+  title: "Blogify",
+  overview: "Blogify is a versatile blogging platform that empowers users to create and share engaging content with ease.",
+  start_date: Date.new(2023, 8, 3),
+  end_date: Date.new(2023, 8, 5),
+  github_url: "https://github.com/federicaulzurrun/Blogify",
+  technologies: "Ruby on Rails",
+  details: "Blogify is the perfect solution for bloggers and content creators looking to establish a digital presence. With its intuitive interface, users can effortlessly create, edit, and publish blog posts. Features include rich text editing, image uploads, and customizable themes. Built on the Ruby on Rails framework, Blogify ensures security, scalability, and a seamless blogging experience for both novice and experienced writers.",
+  url_photo: "https://i.postimg.cc/C171dB0F/Any-Conv-com-Captura-de-Pantalla-2023-09-27-a-la-s-18-47-36.webp"
+)
+
+Project.create(
+  title: "Recipe App",
+  overview: "The Recipe app keeps track of all your recipes, ingredients, and inventory. It allows you to save ingredients, keep track of what you have, create new recipes.",
+  start_date: Date.new(2023, 8, 9),
+  end_date: Date.new(2023, 8, 11),
+  github_url: "https://github.com/federicaulzurrun/RoR-recipe-app",
+  technologies: "Ruby on Rails",
+  details: "The Recipe app is a comprehensive application designed to simplify your cooking experience. It provides features to manage recipes, ingredients, and inventory efficiently. You can save ingredients, track your inventory, create new recipes, and even generate a shopping list based on your recipes. Additionally, the app allows you to share your recipes with others. It's built using Ruby on Rails, ensuring a robust and user-friendly platform for all your culinary needs.",
+  url_photo: "https://i.postimg.cc/bdcNBQH9/Any-Conv-com-Captura-de-Pantalla-2023-09-27-a-la-s-18-57-02.webp"
 )
 
 # Skills

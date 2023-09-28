@@ -1,7 +1,6 @@
-
 <header>
-    <h1>Federica Ulzurrun</h1>
-    <nav>
+    <h1><a class="titleHeader" href="#welcomeMain">Federica Ulzurrun</a></h1>
+    <nav class="menuDesk">
         <a class="navLink desk" href="#projects">Portfolio</a>
         <a class="navLink desk" href="#about-me">About Me</a>
         <a class="navLink desk" href="#contact-me">Contact Me</a>
@@ -15,7 +14,7 @@
         <li><a class="navLink" href="#contact-me">Contact Me</a></li>
     </ul>
 </div>
-<main class="welcomeMain">
+<main class="welcomeMain" id="welcomeMain">
     <div class="presentation">
         <h2 class="titleName">Federica Ulzurrun </h2>
         <h3>Welcome to my coding world</h3>
@@ -25,7 +24,7 @@
     </div>
     <div id="projects">
         <h2>Projects</h2>
-        <div>
+        <div class="projects-cont">
             <% if @projects.present? %>
                 <% @projects.each do |project| %>
                 <%= link_to project_path(project) do %>

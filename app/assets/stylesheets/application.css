@@ -9,7 +9,7 @@ h2 {
   color: #feeee3;
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  font-size: 7vw;
+  font-size: 1.8rem;
   padding: 10px;
   text-align: center;
   letter-spacing: 1px;
@@ -29,23 +29,36 @@ header {
   flex-direction: row;
   justify-content: space-between;
   background-color: #2c2f83;
-  padding: 8% 4%;
+  padding: 0 4%;
   align-items: center;
-  height: 100px;
+  height: 90px;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 h1 {
+  width: 100%;
+  padding: 0;
+}
+
+.titleHeader {
   color: #feeee3;
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
   font-size: 25px;
   padding-left: 2%;
+  width: 100%;
 }
 
 .navLink {
   color: #feeee3;
   font-family: 'Nunito', sans-serif;
   text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px;
 }
 
 .desk {
@@ -65,13 +78,14 @@ h1 {
 
 #mobileMenu.hidden {
   display: block;
+  top: 90px;
 }
 
 #mobileMenu ul {
   list-style-type: none;
   width: 100%;
   position: absolute;
-  top: 330px;
+  top: 450px;
   left: 50%;
   transform: translate(-50%, -332%);
   padding: 20px !important;
@@ -100,6 +114,9 @@ h1 {
 
 
 /* Welcome Main */
+main {
+  padding-top: 70px;
+}
 
 .welcomeMain {
   background-color: #2c2f83;
@@ -109,7 +126,7 @@ h1 {
   background-color: #feeee3;
   color: #2c2f83;
   font-family: 'Nunito', sans-serif;
-  padding: 18% 5%;
+  padding: 80px 5%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -122,13 +139,24 @@ h1 {
 
 /* Projects */
 
+.projects-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #2c2f83;
+}
+
 .project-card {
   background-color: #615f9b;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding: 10% 0;
+  padding-bottom: 10%;
   justify-content: center;
+}
+
+.project-card a {
+  padding-bottom: 5px;
 }
 
 .project-imageCont {
@@ -143,11 +171,8 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 0 3%;
+  padding-top: 20px;
   background-color: #615f9b;
-}
-
-.project-card a {
-  padding: 5px 0;
 }
 
 .project-title {
@@ -155,6 +180,7 @@ h1 {
   font-weight: 500;
   font-size: 5.1vw;
   padding-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .project-overview {
@@ -182,6 +208,8 @@ h1 {
 
 #about-me {
   padding: 5%;
+  background-color: #fd9792;
+  margin: 5% 0;
 }
 
 .border-about {
@@ -287,4 +315,184 @@ footer {
 .copyR {
   text-align: center;
   color: #2c2f83;
+}
+
+.project-especific {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20% 15%;
+}
+
+@media screen and (min-width: 500px) and (max-width: 750px) {
+  .project-info {
+    padding: 2% 6%;
+  }
+
+  .project-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .menuDesk {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+  .presentation {
+    padding: 80px 20%;
+  }
+
+  .desk {
+    display: flex;
+    text-transform: capitalize;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .projects-cont {
+    margin: 0 10%;
+  }
+
+  .project-card {
+    flex-direction: row;
+    align-self: center;
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .project-imageCont {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .project-image {
+    width: 100%;
+  }
+
+  .project-info {
+    width: 150%;
+    padding-bottom: 25px;
+  }
+
+  .project-title {
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+
+  #about-me {
+    padding: 5% 10%;
+    background-color: #fd9792;
+    margin-top: 7%;
+  }
+
+  .skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 3%;
+  }
+
+  .skill-category {
+    flex: 1;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #615f9b;
+  }
+
+  #contact-me {
+    padding: 5% 25%;
+  }
+
+  .project-especific {
+    padding: 10% 18%;
+  }
+
+  .project-especificDetails {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .project-especificDetails .project-info {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  h2 {
+    font-size: 2.1rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .presentation {
+    padding: 15% 15%;
+  }
+
+  .titleName {
+    font-size: 2.5rem;
+  }
+
+  .presentation h3 {
+    font-size: 1.9rem;
+  }
+
+  .presentation p {
+    font-size: 1.4rem;
+  }
+
+  .project-info {
+    padding: 25px 5%;
+  }
+
+  .project-overview {
+    font-size: 1.3rem;
+  }
+
+  .description-about {
+    font-size: 1.4rem;
+  }
+
+  .skills-wrapper {
+    padding: 20px 10%;
+  }
+
+  .skill-category h4 {
+    font-size: 1.4rem;
+  }
+
+  .skill-category p {
+    font-size: 1.2rem;
+  }
+
+  #contact-me {
+    padding: 5% 30%;
+  }
+
+  #contact-me h5 {
+    font-size: 1.4rem;
+  }
+
+  .contact-form label {
+    font-size: 1.3rem;
+  }
+
+  .btnForm {
+    font-size: 1.1rem;
+  }
+
+  .project-especific {
+    padding: 10% 25%;
+  }
 }
