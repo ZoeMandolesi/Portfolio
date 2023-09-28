@@ -26,7 +26,17 @@
         ]
       }
     ],
-    "csstree/validator": true
+    "csstree/validator": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "view-timeline-name",
+          "view-timeline-axis",
+          "animation-timeline"
+        ]
+      }
+    ]
   },
   "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css"]
 }
