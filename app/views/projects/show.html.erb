@@ -1,1 +1,46 @@
-<h1>Projects</h1>
+<header>
+    <h1><a class="titleHeader" href="/">Federica Ulzurrun</a></h1>
+    <nav class="menuDesk">
+        <a class="navLink desk" href="/#projects">Portfolio</a>
+        <a class="navLink desk" href="/#about-me">About Me</a>
+        <a class="navLink desk" href="/#contact-me">Contact Me</a>
+    </nav>
+    <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+</header>
+<div id="mobileMenu">
+    <ul>
+        <li><a class="navLink" href="/#projects">Portfolio</a></li>
+        <li><a class="navLink" href="/#about-me">About Me</a></li>
+        <li><a class="navLink" href="/#contact-me">Contact Me</a></li>
+    </ul>
+</div>
+<section class="welcomeMain especific">
+  <div class="project-especific">
+    <div class="project-imageCont">
+      <% if @project.url_photo.present? %>
+        <%= image_tag @project.url_photo, alt: 'Project Photo', class: 'project-image' %>
+      <% end %>
+    </div>
+    <div class="project-especificDetails">
+      <h1 class="project-title"><%= @project.title %></h1>
+      <p class="project-info"><strong>Overview:</strong> <%= @project.overview %></p>
+      <p class="project-info"><strong>Start Date:</strong> <%= @project.start_date %></p>
+      <p class="project-info"><strong>End Date:</strong> <%= @project.end_date %></p>
+      <p class="project-info"><strong>Github URL:</strong> <%= @project.github_url %></p>
+      <p class="project-info"><strong>Demo URL:</strong> <%= @project.demo_url %></p>
+      <p class="project-info"><strong>Technologies:</strong> <%= @project.technologies %></p>
+      <p class="project-info"><strong>Details:</strong></p>
+      <p class="project-info"><%= @project.details %></p>
+    </div>
+    <%= link_to 'Back', root_path, class: 'btn btnForm' %>
+  </div>
+</section>
+
+<footer>
+    <div class="socials">
+        <a href="mailto:fzulzurrun@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/federica-ulzurrun"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/federicaulzurrun"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <p class="copyR">&copy; 2023 Federica Ulzurrun</p>
+</footer>
